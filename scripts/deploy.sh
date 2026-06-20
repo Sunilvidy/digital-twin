@@ -19,7 +19,7 @@ terraform init -input=false \
   -backend-config="bucket=twin-terraform-state-${AWS_ACCOUNT_ID}" \
   -backend-config="key=${ENVIRONMENT}/terraform.tfstate" \
   -backend-config="region=${AWS_REGION}" \
-  -backend-config="dynamodb_table=twin-terraform-locks" \
+  -backend-config="use_lockfile=true" \
   -backend-config="encrypt=true"
 
 if ! terraform workspace list | grep -q "$ENVIRONMENT"; then
@@ -28,8 +28,8 @@ else
   terraform workspace select "$ENVIRONMENT"
 fi
 
-# Use prod.tfvars for production environment
-if [ "$ENVIRONMENT" = "prod" ]; then
+# Use prod.tfvars for production environment(only if it exists)
+if [ "$ENVIRONMENT" = "prod" ] && [ -f "prod.tfvars" ]; then
   TF_APPLY_CMD=(terraform apply -var-file=prod.tfvars -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
 else
   TF_APPLY_CMD=(terraform apply -var="project_name=$PROJECT_NAME" -var="environment=$ENVIRONMENT" -auto-approve)
