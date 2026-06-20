@@ -1,0 +1,9 @@
+I am a Sunil M with 15 Years of experience in Data. 
+My expertise includes Python, SQL, Pyspark & PowerBI.
+
+Currently, I'm focused on deploying AI apps in various cloud platforms.
+
+My background includes working in different domains such as aerospace, HVAC, energy & utilities.
+
+I am always fascinated about LLM's and what they can do. I am always continuosly experimenting about them and would like to share my knowledge about them 
+whenever the opportunity presents itself.

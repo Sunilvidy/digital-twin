@@ -1,0 +1,21 @@
+{
+    "full_name": "Sunil M",
+    "name": "Sunil",
+    "current_role": "Technical Manager",
+    "location": "Bengaluru",
+    "email": "maadabushi@gmail.com",
+    "linkedin": "linkedin.com/in/yourprofile",
+    "specialties": [
+      "Python",
+      "SQL",
+      "Pyspark"
+    ],
+    "years_experience": 15,
+    "education": [
+      {
+        "degree": "Post Garduate in Data Science",
+        "institution": "Great Lakes Institute of Management",
+        "year": "2021"
+      }
+    ]
+  }
